@@ -1,7 +1,7 @@
 version: "3.1"
 
 intents:
-  - greet
+  - saludo
   - goodbye
   - affirm
   - deny
@@ -10,8 +10,8 @@ intents:
   - bot_challenge
 
 responses:
-  utter_greet:
-  - text: "Hey! How are you?"
+  utter_saludo:
+  - text: "Hola, ¿en que puedo ayudarte?"
 
   utter_cheer_up:
   - text: "Here is something to cheer you up:"

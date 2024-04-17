@@ -1,0 +1,31 @@
+# Archivos de caché y archivos generados durante la compilación
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.rasa
+
+# Entornos virtuales
+venv/
+env/
+
+# Archivos de dependencias
+/requirements.txt
+/requirements-dev.txt
+
+# Archivos de registro
+/logs/
+
+# Datos específicos del usuario
+/config.ini
+/credentials.yml
+
+# Archivos de configuración personalizados
+/config/custom_config.yml
+
+# Archivos específicos de Python y Rasa
+.dist/
+dist-*/
+*.egg
+*.egg-info/
+.python-version
