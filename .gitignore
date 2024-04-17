@@ -4,6 +4,7 @@ __pycache__/
 *.pyo
 *.pyd
 .rasa
+models
 
 # Entornos virtuales
 venv/
