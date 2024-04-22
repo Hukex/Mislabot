@@ -5,6 +5,7 @@ __pycache__/
 *.pyd
 .rasa
 models
+story_graph.dot
 
 # Entornos virtuales
 venv/

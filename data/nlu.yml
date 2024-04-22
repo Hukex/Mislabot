@@ -1,5 +1,4 @@
 version: "3.1"
-
 nlu:
   - intent: saludo
     examples: |
@@ -27,7 +26,6 @@ nlu:
       - ¡hey!
       - ¿cómo te va la vida?
       - ¿cómo va todo?
-      - ¿qué hay de nuevo?
       - ¡buenas!
       - ¿qué tal todo?
       - ¿cómo te trata el día?
@@ -45,76 +43,109 @@ nlu:
       - ¿qué hay de nuevo por aquí?
       - ¡saludos cordiales!
       - ¡hola, espero que estés bien!
-
+      - que onda
   - intent: despedida
     examples: |
-      - cu
-      - good by
-      - cee you later
-      - good night
-      - bye
-      - goodbye
-      - have a nice day
-      - see you around
-      - bye bye
-      - see you later
+      - adiós
+      - hasta luego
+      - nos vemos
+      - que tengas un buen día
+      - que descanses
+      - hasta pronto
+      - hasta la vista
+      - chau
+      - chao
+      - hasta mañana
+      - nos vemos pronto
+      - que te vaya bien
+      - que tengas una buena noche
+      - hasta luego, cocodrilo
+      - nos vemos más tarde
+      - que te cuides
+      - que te mejores
+      - hasta la próxima
+      - hasta otro rato
+      - hasta la próxima vez
+      - hasta pronto, amigo/a
+      - que tengas una tarde/noche genial
+      - que tengas una excelente jornada
+      - que todo vaya bien
+      - hasta pronto, que estés bien
 
-  - intent: affirm
+  - intent: familias_profesionales
     examples: |
-      - yes
-      - y
-      - indeed
-      - of course
-      - that sounds good
-      - correct
+      - ¿Cuáles son las familias profesionales disponibles en este centro?
+      - ¿Qué tipos de familias profesionales ofrece este centro?
+      - ¿Podrías decirme las familias profesionales que tiene este centro?
+      - Quisiera conocer las opciones de familias profesionales en este centro.
+      - ¿Hay información sobre las áreas de estudio disponibles aquí?
+      - ¿Qué estudios relacionados con informática ofrece este centro?
+      - ¿Cuáles son los cursos disponibles en la familia de informática y sus modalidades?
+      - ¿Podrías darme detalles sobre los programas de estudio en informática?
+      - ¿Qué asignaturas se incluyen en los estudios de informática y cuál es su carga lectiva?
+      - Quiero saber más sobre los programas de estudio en informática y cómo se imparten.
+      - ¿Cuáles son las áreas de estudio disponibles en este centro educativo?
+      - ¿Qué opciones de estudio hay en esta institución?
+      - ¿Puedes darme información sobre las carreras disponibles aquí?
+      - ¿Cuáles son los campos académicos que ofrece esta escuela?
+      - ¿Qué programas académicos puedo elegir en este colegio?
+      - ¿Cuáles son los departamentos de estudios en esta universidad?
+      - ¿Qué áreas de estudio están disponibles para los estudiantes?
+      - ¿Cuáles son las opciones de educación que ofrece este centro?
+      - ¿Puedes decirme qué estudios están disponibles en esta escuela?
+      - ¿Qué tipos de estudios están disponibles en esta institución educativa?
+      - ¿Cuáles son los programas académicos ofrecidos por este centro?
+      - ¿Qué categorías de estudios están disponibles aquí?
+      - ¿Cuáles son las áreas de especialización que ofrece este centro?
+      - ¿Qué tipos de cursos se ofrecen en este colegio?
+      - ¿Cuál es el abanico de programas académicos disponibles aquí?
+      - ¿Qué posibilidades de estudio existen en este instituto?
+      - ¿Qué opciones académicas están disponibles en este centro educativo?
+      - ¿Puedes darme una lista de las disciplinas de estudio en este centro?
+      - ¿Qué programas educativos puedo encontrar en esta institución?
+      - ¿Cuáles son las opciones académicas que ofrece esta escuela?
+      - ¿Cuáles son las áreas de conocimiento que se imparten aquí?
+      - ¿Qué tipos de educación ofrece este centro de enseñanza?
+      - ¿Qué especialidades puedo estudiar en esta institución?
+      - ¿Puedes decirme cuáles son las materias que se enseñan en esta escuela?
+      - ¿Qué opciones tengo para estudiar en esta universidad?
+      - ¿Cuáles son los campos de estudio disponibles en este plantel educativo?
+      - ¿Cuáles son las opciones de estudio que tengo en esta facultad?
+      - ¿Qué programas académicos hay disponibles en esta institución?
+      - ¿Puedes darme información sobre las áreas de aprendizaje en este colegio?
+      - ¿Qué cursos puedo cursar en este centro de estudios?
+      - ¿Cuáles son las oportunidades educativas que ofrece este plantel?
+      - ¿Qué posibilidades tengo de estudiar aquí?
+      - ¿Puedes decirme qué estudios puedo seguir en esta escuela?
+      - ¿Cuál es la variedad de programas académicos que ofrece este centro?
 
-  - intent: deny
+  - intent: informacion_csv
     examples: |
-      - no
-      - n
-      - never
-      - I don't think so
-      - don't like that
-      - no way
-      - not really
+      - Que oferta de estudios hay en la rama de informatica
+      - Ofertas en informatica
+      - Que puedo estudiar de informatica?
 
-  - intent: mood_great
+  - intent: anulacion
     examples: |
-      - perfect
-      - great
-      - amazing
-      - feeling like a king
-      - wonderful
-      - I am feeling very good
-      - I am great
-      - I am amazing
-      - I am going to save the world
-      - super stoked
-      - extremely good
-      - so so perfect
-      - so good
-      - so perfect
+      - anulacion
+      - quiero anular la matricula
+      - como puedo anular la matricula
+      - cancelar matricula
+      - como puedo cancelar mi matricula
 
-  - intent: mood_unhappy
+  - intent: certificados
     examples: |
-      - my day was horrible
-      - I am sad
-      - I don't feel very well
-      - I am disappointed
-      - super sad
-      - I'm so sad
-      - sad
-      - very sad
-      - unhappy
-      - not good
-      - not very good
-      - extremly sad
-      - so saad
-      - so sad
+      - certificados
+      - necesito un certificado
+      - como puedo pedir un certificado
+      - que certificados existen
+      - tramitar un certificado
 
-  - intent: bot_challenge
+  - intent: horario
     examples: |
-      - are you a bot?
-      - are you a human?
-      - am I talking to a bot?
-      - am I talking to a human?
+      - horario
+      - horarios
+      - a que hora
+      - cual es el horario
+      - cuando empiezan las clases
+      - hasta que hora

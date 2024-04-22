@@ -1,34 +1,157 @@
 version: "3.1"
-
 intents:
+  - despedida
   - saludo
-  - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
+  - informacion_csv
+  - familias_profesionales
+  - anulacion
+  - certificados
+  - horario
 
 responses:
   utter_saludo:
-  - text: "Hola, ¿en que puedo ayudarte?"
+    - text: Hola, ¿en que puedo ayudarte?
+  utter_despedida:
+    - text: Adios, esperamos que su duda haya sido resuelta
+  utter_familias_profesionales:
+    - text: >
+        [
+          {
+            "nombre": "COMERCIO Y MARKETING",
+            "niveles": [
+              {
+                "nombre": "GRADO MEDIO",
+                "cursos": ["Actividades comerciales"]
+              },
+              {
+                "nombre": "GRADO SUPERIOR",
+                "cursos": ["Comercio Internacional (LOE)", "Gestión de ventas y espacios comerciales", "Marketing y publicidad"]
+              }
+            ]
+          },
+          {
+            "nombre": "FABRICACIÓN MECÁNICA",
+            "niveles": [
+              {
+                "nombre": "GRADO SUPERIOR",
+                "cursos": ["Óptica de anteojería"]
+              }
+            ]
+          },
+          {
+            "nombre": "HOSTELERÍA Y TURISMO",
+            "niveles": [
+              {
+                "nombre": "GRADO SUPERIOR",
+                "cursos": ["Gestión de alojamientos turísticos","Agencias de viajes y gestión de eventos","Guía, Información y Asistencia turísticas"]
+              }
+            ]
+          },
+          {
+            "nombre": "ADMINISTRACIÓN Y GESTIÓN",
+            "niveles": [
+              {
+                "nombre": "GRADO MEDIO",
+                "cursos": ["Gestión administrativa (LOE)"]
+              },
+              {
+                "nombre": "GRADO SUPERIOR",
+                "cursos": ["Administración y Finanzas (LOE)"]
+              }
+            ]
+          },
+          {
+            "nombre": "INFORMÁTICA Y COMUNICACIONES",
+            "niveles": [
+              {
+                "nombre": "GRADO MEDIO",
+                "cursos": ["Sistemas microinformáticos y redes"]
+              },
+              {
+                "nombre": "GRADO SUPERIOR",
+                "cursos": ["Desarrollo de aplicaciones web","Desarrollo de aplicaciones multiplataforma","Administración de sistemas informáticos en red"]
+              },
+              {
+                "nombre": "CURSO ESPECIALIZACIÓN",
+                "cursos": ["Ciberseguridad en entornos de las tecnologías de la información", "Inteligencia artificial y Big data"]
+              }
+            ]
+          },
+          {
+            "nombre": "SANIDAD",
+            "niveles": [
+              {
+                "nombre": "GRADO MEDIO",
+                "cursos": ["Cuidados auxiliares de enfermería"]
+              },
+              {
+                "nombre": "GRADO SUPERIOR",
+                "cursos": ["Laboratorio clínico y biomédico"]
+              }
+            ]
+          }
+        ]
+  utter_anulacion:
+    - text: >
+        El proceso de anulación de matrícula a instancia del interesado implica los siguientes pasos:
+        Los alumnos o sus representantes legales tienen derecho a solicitar la anulación de la matrícula, lo que resulta en la pérdida de sus derechos a la enseñanza, evaluación y calificación de los módulos profesionales en los que estaban matriculados.
+        En el caso de los alumnos matriculados en régimen semipresencial o a distancia, tienen la opción de solicitar la anulación del curso completo o de módulos específicos, perdiendo sus derechos en correspondencia con la normativa aplicable.
+        Las solicitudes de anulación deben presentarse mediante el modelo establecido por la conselleria de educación, ante la dirección del centro educativo correspondiente, con al menos dos meses de antelación al final del periodo lectivo de los módulos en cuestión.
+        Los plazos para presentar la solicitud varían según la convocatoria y ciclo formativo. Los detalles sobre estos plazos se pueden encontrar en el siguiente enlace: https://www.fpmislata.com/wordpress/secretaria/tramites/tramites-plazos-mas-habituales/
+        La dirección del centro resolverá las solicitudes en un plazo de un mes a partir de la presentación. El silencio administrativo se considerará como una respuesta afirmativa. Se pueden interponer recursos de alzada contra las resoluciones desestimatorias.
+        Los alumnos a los que se les concede la anulación no serán incluidos en las actas de evaluación y no se les computarán las convocatorias correspondientes a la matrícula. Además, perderán el derecho de reserva de plaza para futuros cursos académicos.
+        La anulación de matrícula es independiente de la renuncia a convocatorias concretas de módulos. La renuncia a convocatorias no implica la renuncia de la matrícula en su totalidad.
+        Este proceso se establece sin perjuicio de lo dispuesto en la normativa vigente sobre evaluación y renuncia a convocatorias de módulos profesionales por circunstancias personales específicas.
+        <br>
+        Tiene mas información en el siguiente enlace https://www.fpmislata.com/wordpress/secretaria/tramites/anulacion-matricula/
+  utter_certificados:
+    - text: >
+        Los alumnos pueden solicitar varios tipos de certificados a través de esta página:
 
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
+        Certificado de Matrícula: Indica el curso y ciclo formativo en el que están matriculados. No tiene tasa.
+        Certificado Académico Oficial Incompleto: Muestra las calificaciones obtenidas en un ciclo formativo que no se ha finalizado. Implica el pago de la tasa por certificados.
+        Certificado Académico Oficial Completo: Indica las calificaciones obtenidas en un ciclo formativo finalizado, con nota media. Implica el pago de la tasa por certificados.
+        Certificado de Becas
+        Certificado para Acceso a la Universidad: Necesario para la matrícula en la Universidad. Implica el pago de la tasa por certificados.
+        Certificado de Pruebas de Acceso (total o parcial). Implica el pago de la tasa por certificados.
+        Pasos para solicitarlo:
 
-  utter_did_that_help:
-  - text: "Did that help you?"
-
-  utter_happy:
-  - text: "Great, carry on!"
-
-  utter_goodbye:
-  - text: "Bye"
-
-  utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+        Descargar el impreso de solicitud de certificado, rellenarlo con letras mayúsculas y guardarlo.
+        Generar la tasa de expedición del certificado desde un enlace específico, siguiendo los pasos del asistente.
+        Abonar la tasa en una entidad bancaria indicada en el impreso.
+        Enviar el documento de solicitud de certificado junto con una copia escaneada del DNI y copia de la tasa pagada (si procede) a la dirección de correo electrónico especificada.
+        En caso de haber abonado una tasa reducida, adjuntar copia del carnet de familia numerosa o certificado de discapacidad.
+        Recogida del certificado: El interesado recibirá un correo indicando cuándo puede pasar a recogerlo por conserjería. Deberá presentar el DNI, la tasa pagada y, en caso de venir otra persona distinta del interesado, una autorización del mismo, junto con los documentos especificados.
+        <br>
+        Tiene mas información en el siguiente enlace https://www.fpmislata.com/wordpress/secretaria/tramites/solicitud-de-certificado/
+  utter_horario:
+    - text: >
+        El horario del centro es de 8:15am a 21:00pm <br>
+        El horario de clases de mañana comienza a las 8:15am <br>
+        El horario de clases de tarde comienza a las 15:55pm <br>
+        El horario de secretaria es de lunes a viernes de 10 a 13 horas, y martes y jueves de 16 a 18 horas.  <br>
+        El horario de consejeria tiene una pausa desde las 18:30pm hasta las 19:00pm
+      image: "https://www.fpmislata.com/wordpress/wp-content/uploads/cropped-logo_cipfp_pq-1.png"
 
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+
+actions:
+  - action_read_csv
+
+slots:
+  despedida_hecha:
+    type: bool
+    initial_value: false
+    mappings:
+      - type: from_intent
+        intent: despedida
+        value: true
+  saludo_hecho:
+    type: bool
+    initial_value: false
+    mappings:
+      - type: from_intent
+        intent: saludo
+        value: true

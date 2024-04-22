@@ -1,30 +1,65 @@
 version: "3.1"
-
 stories:
+  - story: happy path
+    steps:
+      - intent: saludo
+      - action: utter_saludo
+      - intent: despedida
+      - action: utter_despedida
 
-- story: happy path
-  steps:
-  - intent: saludo
-  - action: utter_saludo
-  - intent: mood_great
-  - action: utter_happy
+  - story: Consulta de información de informática
+    steps:
+      - intent: saludo
+      - action: utter_saludo
+      - intent: informacion_csv
+      - action: action_read_csv
+      - intent: despedida
+      - action: utter_despedida
 
-- story: sad path 1
-  steps:
-  - intent: saludo
-  - action: utter_saludo
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_happy
+  - story: Consulta de información de familias profesionales
+    steps:
+      - intent: saludo
+      - action: utter_saludo
+      - intent: familias_profesionales
+      - action: utter_familias_profesionales
+      - intent: despedida
+      - action: utter_despedida
 
-- story: sad path 2
-  steps:
-  - intent: saludo
-  - action: utter_saludo
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: deny
-  - action: utter_goodbye
+  - story: Anular matricula
+    steps:
+      - intent: saludo
+      - action: utter_saludo
+      - slot_was_set:
+          - saludo_hecho: true
+      - intent: anulacion
+      - action: utter_anulacion
+      - intent: despedida
+      - action: utter_despedida
+      - slot_was_set:
+          - despedida_hecha: true
+
+  - story: Pedir certificado
+    steps:
+      - intent: saludo
+      - action: utter_saludo
+      - slot_was_set:
+          - saludo_hecho: true
+      - intent: certificados
+      - action: utter_certificados
+      - intent: despedida
+      - action: utter_despedida
+      - slot_was_set:
+          - despedida_hecha: true
+
+  - story: Horario
+    steps:
+      - intent: saludo
+      - action: utter_saludo
+      - slot_was_set:
+          - saludo_hecho: true
+      - intent: horario
+      - action: utter_horario
+      - intent: despedida
+      - action: utter_despedida
+      - slot_was_set:
+          - despedida_hecha: true
