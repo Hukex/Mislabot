@@ -1,20 +1,38 @@
 version: "3.1"
 intents:
-  - despedida
-  - saludo
-  - informacion_csv
-  - familias_profesionales
   - anulacion
+  - becas_1
+  - becas_2
+  - becas_3
   - certificados
+  - despedida
+  - familias_profesionales
   - horario
-
+  - informacion_csv
+  - matricula
+  - requisitos_acceso
+  - saludo
+  - gracias
 responses:
+  utter_default:
+    - text: Lo siento, no entendí lo que dijiste. 😅 ¿Puedes intentarlo de nuevo?
+  utter_gracias:
+    - text: Me alegro de haber sido útil, ¿algo en lo que pueda ayudarle? 😃
   utter_saludo:
-    - text: Hola, ¿en que puedo ayudarte?
+    - text: |
+        Hola 👋, ¿en que puedo ayudarle? <br>
+        - 📚Matricula <br>
+        - 🎓Becas <br>
+        - ❌Anulación <br>
+        - 📃Certificados <br>
+        - ⌚Horario <br>
+        - 📝Requisitos de acceso <br>
+        - 👩‍🏫Familias profesionales <br>
+        - 💻Ofertas de informática
   utter_despedida:
-    - text: Adios, esperamos que su duda haya sido resuelta
+    - text: Adiós, esperamos que su duda haya sido resuelta
   utter_familias_profesionales:
-    - text: >
+    - text: |
         [
           {
             "nombre": "COMERCIO Y MARKETING",
@@ -92,54 +110,59 @@ responses:
           }
         ]
   utter_anulacion:
-    - text: >
-        El proceso de anulación de matrícula a instancia del interesado implica los siguientes pasos:
-        Los alumnos o sus representantes legales tienen derecho a solicitar la anulación de la matrícula, lo que resulta en la pérdida de sus derechos a la enseñanza, evaluación y calificación de los módulos profesionales en los que estaban matriculados.
-        En el caso de los alumnos matriculados en régimen semipresencial o a distancia, tienen la opción de solicitar la anulación del curso completo o de módulos específicos, perdiendo sus derechos en correspondencia con la normativa aplicable.
-        Las solicitudes de anulación deben presentarse mediante el modelo establecido por la conselleria de educación, ante la dirección del centro educativo correspondiente, con al menos dos meses de antelación al final del periodo lectivo de los módulos en cuestión.
-        Los plazos para presentar la solicitud varían según la convocatoria y ciclo formativo. Los detalles sobre estos plazos se pueden encontrar en el siguiente enlace: https://www.fpmislata.com/wordpress/secretaria/tramites/tramites-plazos-mas-habituales/
-        La dirección del centro resolverá las solicitudes en un plazo de un mes a partir de la presentación. El silencio administrativo se considerará como una respuesta afirmativa. Se pueden interponer recursos de alzada contra las resoluciones desestimatorias.
-        Los alumnos a los que se les concede la anulación no serán incluidos en las actas de evaluación y no se les computarán las convocatorias correspondientes a la matrícula. Además, perderán el derecho de reserva de plaza para futuros cursos académicos.
-        La anulación de matrícula es independiente de la renuncia a convocatorias concretas de módulos. La renuncia a convocatorias no implica la renuncia de la matrícula en su totalidad.
-        Este proceso se establece sin perjuicio de lo dispuesto en la normativa vigente sobre evaluación y renuncia a convocatorias de módulos profesionales por circunstancias personales específicas.
-        <br>
-        Tiene mas información en el siguiente enlace https://www.fpmislata.com/wordpress/secretaria/tramites/anulacion-matricula/
+    - text: |
+        El proceso de anulación de matrícula a instancia del interesado implica los siguientes pasos: Los alumnos o sus representantes legales tienen derecho a solicitar la anulación de la matrícula, lo que resulta en la pérdida de sus derechos a la enseñanza, evaluación y calificación de los módulos profesionales en los que estaban matriculados. En el caso de los alumnos matriculados en régimen semipresencial o a distancia, tienen la opción de solicitar la anulación del curso completo o de módulos específicos, perdiendo sus derechos en correspondencia con la normativa aplicable. Las solicitudes de anulación deben presentarse mediante el modelo establecido por la conselleria de educación, ante la dirección del centro educativo correspondiente, con al menos dos meses de antelación al final del periodo lectivo de los módulos en cuestión. Los plazos para presentar la solicitud varían según la convocatoria y ciclo formativo. Los detalles sobre estos plazos se pueden encontrar en el siguiente enlace: https://www.fpmislata.com/wordpress/secretaria/tramites/tramites-plazos-mas-habituales/ La dirección del centro resolverá las solicitudes en un plazo de un mes a partir de la presentación. El silencio administrativo se considerará como una respuesta afirmativa. Se pueden interponer recursos de alzada contra las resoluciones desestimadoras. Los alumnos a los que se les concede la anulación no serán incluidos en las actas de evaluación y no se les computarán las convocatorias correspondientes a la matrícula. Además, perderán el derecho de reserva de plaza para futuros cursos académicos. La anulación de matrícula es independiente de la renuncia a convocatorias concretas de módulos. La renuncia a convocatorias no implica la renuncia de la matrícula en su totalidad. Este proceso se establece sin perjuicio de lo dispuesto en la normativa vigente sobre evaluación y renuncia a convocatorias de módulos profesionales por circunstancias personales específicas. <br> Tiene mas información en el siguiente enlace https://www.fpmislata.com/wordpress/secretaria/tramites/anulacion-matricula/
   utter_certificados:
-    - text: >
+    - text: |
         Los alumnos pueden solicitar varios tipos de certificados a través de esta página:
-
-        Certificado de Matrícula: Indica el curso y ciclo formativo en el que están matriculados. No tiene tasa.
-        Certificado Académico Oficial Incompleto: Muestra las calificaciones obtenidas en un ciclo formativo que no se ha finalizado. Implica el pago de la tasa por certificados.
-        Certificado Académico Oficial Completo: Indica las calificaciones obtenidas en un ciclo formativo finalizado, con nota media. Implica el pago de la tasa por certificados.
-        Certificado de Becas
-        Certificado para Acceso a la Universidad: Necesario para la matrícula en la Universidad. Implica el pago de la tasa por certificados.
-        Certificado de Pruebas de Acceso (total o parcial). Implica el pago de la tasa por certificados.
-        Pasos para solicitarlo:
-
-        Descargar el impreso de solicitud de certificado, rellenarlo con letras mayúsculas y guardarlo.
-        Generar la tasa de expedición del certificado desde un enlace específico, siguiendo los pasos del asistente.
-        Abonar la tasa en una entidad bancaria indicada en el impreso.
-        Enviar el documento de solicitud de certificado junto con una copia escaneada del DNI y copia de la tasa pagada (si procede) a la dirección de correo electrónico especificada.
-        En caso de haber abonado una tasa reducida, adjuntar copia del carnet de familia numerosa o certificado de discapacidad.
-        Recogida del certificado: El interesado recibirá un correo indicando cuándo puede pasar a recogerlo por conserjería. Deberá presentar el DNI, la tasa pagada y, en caso de venir otra persona distinta del interesado, una autorización del mismo, junto con los documentos especificados.
-        <br>
-        Tiene mas información en el siguiente enlace https://www.fpmislata.com/wordpress/secretaria/tramites/solicitud-de-certificado/
+        Certificado de Matrícula: Indica el curso y ciclo formativo en el que están matriculados. No tiene tasa. Certificado Académico Oficial Incompleto: Muestra las calificaciones obtenidas en un ciclo formativo que no se ha finalizado. Implica el pago de la tasa por certificados. Certificado Académico Oficial Completo: Indica las calificaciones obtenidas en un ciclo formativo finalizado, con nota media. Implica el pago de la tasa por certificados. Certificado de Becas Certificado para Acceso a la Universidad: Necesario para la matrícula en la Universidad. Implica el pago de la tasa por certificados. Certificado de Pruebas de Acceso (total o parcial). Implica el pago de la tasa por certificados. Pasos para solicitarlo:
+        Descargar el impreso de solicitud de certificado, rellenarlo con letras mayúsculas y guardarlo. Generar la tasa de expedición del certificado desde un enlace específico, siguiendo los pasos del asistente. Abonar la tasa en una entidad bancaria indicada en el impreso. Enviar el documento de solicitud de certificado junto con una copia escaneada del DNI y copia de la tasa pagada (si procede) a la dirección de correo electrónico especificada. En caso de haber abonado una tasa reducida, adjuntar copia del carnet de familia numerosa o certificado de discapacidad. Recogida del certificado: El interesado recibirá un correo indicando cuándo puede pasar a recogerlo por conserjería. Deberá presentar el DNI, la tasa pagada y, en caso de venir otra persona distinta del interesado, una autorización del mismo, junto con los documentos especificados. <br> Tiene mas información en el siguiente enlace https://www.fpmislata.com/wordpress/secretaria/tramites/solicitud-de-certificado/
   utter_horario:
-    - text: >
-        El horario del centro es de 8:15am a 21:00pm <br>
-        El horario de clases de mañana comienza a las 8:15am <br>
-        El horario de clases de tarde comienza a las 15:55pm <br>
-        El horario de secretaria es de lunes a viernes de 10 a 13 horas, y martes y jueves de 16 a 18 horas.  <br>
-        El horario de consejeria tiene una pausa desde las 18:30pm hasta las 19:00pm
-      image: "https://www.fpmislata.com/wordpress/wp-content/uploads/cropped-logo_cipfp_pq-1.png"
+    - text: |
+        El horario del centro es de 8:15am a 21:00pm <br> El horario de clases de mañana comienza a las 8:15am <br> El horario de clases de tarde comienza a las 15:55pm <br> El horario de secretaria es de lunes a viernes de 10 a 13 horas, y martes y jueves de 16 a 18 horas.  <br> El horario de consejeria tiene una pausa desde las 18:30pm hasta las 19:00pm
+      image: https://www.fpmislata.com/wordpress/wp-content/uploads/cropped-logo_cipfp_pq-1.png
+  utter_matricula:
+    - text: a
+  utter_becas_1:
+    - text: |
+        Existen varias becas <br>
+        -INFORMACIÓN BECAS MINISTERIO DE EDUCACIÓN <br>
+        -III CONVOCATORIA DE BECAS PARA ESTUDIANTES CON DISCAPACIDAD FUNDACIÓN ADECCO <br>
+        -ADMINISTRACIÓN LOCAL. BECAS DE LA DIPU <br>
+        -PLAN DE MOVILIDAD JÓVENES BENEFICIARIOS DEL SISTEMA NACIONAL DE GARANTÍA JUVENIL <br>
+        -BECAS TALENTUM <br>
 
+        Tiene mas información en este enlace: https://www.fpmislata.com/wordpress/secretaria/tramites/becas-y-ayudas/ <br>
+
+        Puedo ayudarle también con documentación necesaria para la beca mec o hasta cuando es el plazo para solicitar la beca.
+  utter_becas_2:
+    - text: |
+        Para la beca MEC es necesario: <br>
+          El documento de identidad (NIF/NIE) del solicitante de beca, es decir, el alumno o alumna al que va destinada la beca y no el del padre/madre o tutor. <br>
+          Una contraseña segura pero fácil de recordar para ti. <br>
+          Una cuenta de correo electrónico que esté activa. A esta cuenta nos enviarán la activación del registro y de la contraseña. <br>
+          Un número de teléfono móvil. Es importante que guardes y tengas actualizados estos datos. <br>
+  utter_becas_3:
+    - text: |
+        El plazo de la beca MEC es del 19 de marzo de 2024 a las 09:00 al 10 de mayo de 2024 a las 15:00 (horas peninsulares). <br>
+        Tiene mas información en este enlace https://www.becaseducacion.gob.es/becas-y-ayudas/fp-bachillerato-otros/como-solicitarla.html#cuando-debes-solicitarla
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
-
 actions:
+  - utter_becas_1
+  - utter_becas_3
+  - utter_becas_2
+  - utter_saludo
+  - utter_certificados
+  - utter_horario
   - action_read_csv
-
+  - utter_default
+  - utter_anulacion
+  - utter_despedida
+  - utter_familias_profesionales
+  - utter_matricula
+  - utter_requisitos_acceso
 slots:
   despedida_hecha:
     type: bool

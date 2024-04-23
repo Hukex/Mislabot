@@ -5,3 +5,7 @@ rules:
     steps:
       - intent: despedida
       - action: utter_despedida
+  - rule: Answer anytime the user says gracias
+    steps:
+      - intent: gracias
+      - action: utter_gracias

@@ -71,7 +71,6 @@ nlu:
       - que tengas una excelente jornada
       - que todo vaya bien
       - hasta pronto, que estés bien
-
   - intent: familias_profesionales
     examples: |
       - ¿Cuáles son las familias profesionales disponibles en este centro?
@@ -118,13 +117,11 @@ nlu:
       - ¿Qué posibilidades tengo de estudiar aquí?
       - ¿Puedes decirme qué estudios puedo seguir en esta escuela?
       - ¿Cuál es la variedad de programas académicos que ofrece este centro?
-
   - intent: informacion_csv
     examples: |
       - Que oferta de estudios hay en la rama de informatica
       - Ofertas en informatica
       - Que puedo estudiar de informatica?
-
   - intent: anulacion
     examples: |
       - anulacion
@@ -132,7 +129,6 @@ nlu:
       - como puedo anular la matricula
       - cancelar matricula
       - como puedo cancelar mi matricula
-
   - intent: certificados
     examples: |
       - certificados
@@ -140,7 +136,7 @@ nlu:
       - como puedo pedir un certificado
       - que certificados existen
       - tramitar un certificado
-
+      - certifciados
   - intent: horario
     examples: |
       - horario
@@ -149,3 +145,46 @@ nlu:
       - cual es el horario
       - cuando empiezan las clases
       - hasta que hora
+  - intent: becas_1
+    examples: |
+      - becas
+      - mec
+      - beca
+      - Que becas teneis?
+      - becas disponibles
+      - información sobre becas
+      - ¿Cuáles son las becas disponibles?
+      - ¿Qué tipo de becas ofrecen?
+      - Necesito información sobre ayudas económicas para estudios
+      - ¿Cómo puedo solicitar una beca?
+      - ¿Hay becas disponibles para estudiantes con discapacidad?
+      - ¿Dónde puedo encontrar información sobre becas del Ministerio de Educación?
+      - ¿Cuál es el plazo para solicitar una beca?
+  - intent: becas_2
+    examples: |
+      - dame mas info sobre la beca mec
+      - documentacion
+      - ¿Qué requisitos debo cumplir para obtener una beca?
+      - ¿Puedes ayudarme con la documentación necesaria para solicitar una beca?
+      - requisitos becas mec
+  - intent: becas_3
+    examples: |
+      - ¿Cuándo es el plazo para solicitar la beca MEC?
+      - plazo becas
+      - hasta cuando puedo pedir le beca mec
+      - cuando acaba la beca mec
+      - ¿Cuándo es el plazo límite para solicitar la beca MEC?
+      - ¿Hasta qué fecha puedo presentar la solicitud de la beca MEC?
+      - ¿Cuál es la fecha límite para pedir la beca MEC?
+      - ¿Cuándo finaliza el periodo de solicitud de la beca MEC?
+      - ¿Hasta cuándo está abierto el plazo de solicitud para la beca MEC?
+  - intent: gracias
+    examples: |
+      - No, gracias
+      - Si, gracias
+      - gracias
+      - perfecto
+      - todo bien
+      - joya
+      - no hace falta
+      - por ahora no
