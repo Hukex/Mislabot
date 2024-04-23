@@ -133,3 +133,36 @@ stories:
       - action: utter_becas_2
       - intent: becas_3
       - action: utter_becas_3
+
+  - story: Matricula_1
+    steps:
+      - intent: saludo
+      - action: utter_saludo
+      - slot_was_set:
+          - saludo_hecho: true
+      - intent: matricula_1
+      - action: utter_matricula_1
+      - intent: matricula_2
+      - action: utter_matricula_2
+
+  - story: Matricula_2
+    steps:
+      - intent: saludo
+      - action: utter_saludo
+      - slot_was_set:
+          - saludo_hecho: true
+      - intent: matricula_1
+      - action: utter_matricula_1
+      - intent: matricula_2
+      - action: utter_matricula_2
+      - intent: despedida
+      - action: utter_despedida
+      - slot_was_set:
+          - despedida_hecha: true
+
+  - story: Matricula_3
+    steps:
+      - intent: matricula_1
+      - action: utter_matricula_1
+      - intent: matricula_2
+      - action: utter_matricula_2

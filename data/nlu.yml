@@ -188,3 +188,25 @@ nlu:
       - joya
       - no hace falta
       - por ahora no
+  - intent: matricula_1
+    examples: |
+      - Matricula
+      - Como me puedo matricular
+      - Dame info acerca de matriculacion
+      - Matriculacion
+      - Hasta cuando puedo matricularme
+      - Quiero matricularme
+  - intent: matricula_2
+    examples: |
+      - Ya estoy matriculado en el centro
+      - Ya soy alumno
+      - Estuve antes en el centro
+      - Soy alumno
+      - Soy alumna
+      - Ya estudie aqui
+      - Ya estudie ahi
+      - Ya estuve matriculado
+      - Ya estoy aqui
+      - Ya estoy en vuestro centro
+      - He sido alumno anteriormente
+      - Curse estudios
