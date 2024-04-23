@@ -20,11 +20,11 @@ This project was developed in order to learn **Rasa** and create a custom chatbo
 
 Web Chatbot
 
-![GIF](https://github.com/Hukex/Mislabot/blob/main/readmefiles/web.gif?raw=true)
+![GIF](https://github.com/Hukex/Mislabot/blob/master/readmefiles/web.gif?raw=true)
  
 Telegram Bot
 
-![GIF](https://github.com/Hukex/Mislabot/blob/main/readmefiles/telegram.gif?raw=true)
+![GIF](https://github.com/Hukex/Mislabot/blob/master/readmefiles/telegram.gif?raw=true)
 
 > <img src="extras/mislabot.png" height="300"/>
 
