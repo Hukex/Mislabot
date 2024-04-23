@@ -26,7 +26,7 @@ Telegram Bot
 
 ![GIF](https://github.com/Hukex/Mislabot/blob/master/readmefiles/telegram.gif?raw=true)
 
-> <img src="extras/mislabot.png" height="300"/>
+> <img src="extras/Mislabot.png" height="300"/>
 
 # Technologies💻
 
