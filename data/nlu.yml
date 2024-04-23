@@ -117,11 +117,24 @@ nlu:
       - ¿Qué posibilidades tengo de estudiar aquí?
       - ¿Puedes decirme qué estudios puedo seguir en esta escuela?
       - ¿Cuál es la variedad de programas académicos que ofrece este centro?
-  - intent: informacion_csv
+  - intent: ofertas_informatica
     examples: |
       - Que oferta de estudios hay en la rama de informatica
       - Ofertas en informatica
       - Que puedo estudiar de informatica?
+  - intent: informacion_csv
+    examples: |
+      - estudiar
+      - estudiar programacion
+      - estudiar big data"
+      - estudiar redes"
+      - asignaturas
+      - asignaturas de DAW
+      - asignaturas DAW
+      - asignaturas asir
+      - que asignaturas tiene
+      - quiero estudiar
+      - quiero estudiar programacion
   - intent: anulacion
     examples: |
       - anulacion
@@ -210,3 +223,65 @@ nlu:
       - Ya estoy en vuestro centro
       - He sido alumno anteriormente
       - Curse estudios
+  - intent: matricula_3
+    examples: |
+      - Soy nuevo
+      - No soy alumno
+      - Soy nuevo en el centro
+      - No estoy matriculado aun
+      - No tengo matrícula
+      - Acabo de llegar
+      - No estoy registrado
+      - Quiero inscribirme
+      - No me he matriculado todavía
+      - Soy nuevo en la institución
+      - No tengo cuenta aquí
+      - Estoy interesado en inscribirme
+      - ¿Cómo puedo registrarme?
+      - Quiero comenzar el proceso de matriculación
+  - intent: matricula_4
+    examples: |
+      - Soy alumno de semipresencial
+      - semipresencial
+      - Estoy en semipresencial
+      - Pertenezco a la modalidad semipresencial
+      - Soy estudiante en modalidad semipresencial
+      - Estudio en el programa semipresencial
+      - Formo parte de los alumnos semipresenciales
+      - Estoy inscrito en la opción
+  - intent: requisitos_acceso_1
+    examples: |
+      - Cuales son los requisitos de acceso
+      - requisitos
+      - requisitos de acceso
+      - ¿Cuáles son los requisitos para acceder?
+      - Quiero saber los requisitos de acceso
+      - ¿Cuáles son los requerimientos para entrar?
+      - Información sobre los requisitos de acceso
+      - ¿Cuáles son los requisitos necesarios para ingresar?
+  - intent: requisitos_acceso_2
+    examples: |
+      - Quiero entrar a un grado medio
+      - GM
+      - grado medio
+      - ¿Cuáles son los requisitos para ingresar a grado medio?
+      - Información sobre el acceso a GM
+      - Requisitos para entrar en grado medio
+      - Quiero saber qué necesito para estudiar en grado medio
+  - intent: requisitos_acceso_3
+    examples: |
+      - Quiero entrar a un grado superior
+      - GS
+      - grado superior
+      - ¿Cuáles son los requisitos para ingresar a grado superior?
+      - Información sobre el acceso a GS
+      - Requisitos para entrar en grado superior
+      - Quiero saber qué necesito para estudiar en grado superior
+  - intent: requisitos_acceso_4
+    examples: |
+      - Quiero entrar a un curso de especialización
+      - curso de especialización
+      - ¿Cuáles son los requisitos para ingresar a un curso de especialización?
+      - Información sobre el acceso a curso de especialización
+      - Requisitos para entrar a curso de especialización?
+      - Quiero saber qué necesito para estudiar en curso de especialización?

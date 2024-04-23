@@ -17,6 +17,8 @@ stories:
       - action: utter_saludo
       - slot_was_set:
           - saludo_hecho: true
+      - intent: ofertas_informatica
+      - action: utter_ofertas_informatica
       - intent: informacion_csv
       - action: action_read_csv
       - intent: despedida
@@ -166,3 +168,190 @@ stories:
       - action: utter_matricula_1
       - intent: matricula_2
       - action: utter_matricula_2
+
+  - story: Matricula_4
+    steps:
+      - intent: saludo
+      - action: utter_saludo
+      - slot_was_set:
+          - saludo_hecho: true
+      - intent: matricula_1
+      - action: utter_matricula_1
+      - intent: matricula_3
+      - action: utter_matricula_3
+
+  - story: Matricula_5
+    steps:
+      - intent: saludo
+      - action: utter_saludo
+      - slot_was_set:
+          - saludo_hecho: true
+      - intent: matricula_1
+      - action: utter_matricula_1
+      - intent: matricula_3
+      - action: utter_matricula_3
+      - intent: despedida
+      - action: utter_despedida
+      - slot_was_set:
+          - despedida_hecha: true
+
+  - story: Matricula_6
+    steps:
+      - intent: matricula_1
+      - action: utter_matricula_1
+      - intent: matricula_3
+      - action: utter_matricula_3
+
+  - story: Matricula_7
+    steps:
+      - intent: saludo
+      - action: utter_saludo
+      - slot_was_set:
+          - saludo_hecho: true
+      - intent: matricula_1
+      - action: utter_matricula_1
+      - intent: matricula_4
+      - action: utter_matricula_4
+
+  - story: Matricula_8
+    steps:
+      - intent: saludo
+      - action: utter_saludo
+      - slot_was_set:
+          - saludo_hecho: true
+      - intent: matricula_1
+      - action: utter_matricula_1
+      - intent: matricula_4
+      - action: utter_matricula_4
+      - intent: despedida
+      - action: utter_despedida
+      - slot_was_set:
+          - despedida_hecha: true
+
+  - story: Matricula_9
+    steps:
+      - intent: matricula_1
+      - action: utter_matricula_1
+      - intent: matricula_4
+      - action: utter_matricula_4
+
+  - story: Matricula_10
+    steps:
+      - intent: matricula_1
+      - action: utter_matricula_1
+      - intent: matricula_2
+      - action: utter_matricula_2
+      - intent: matricula_3
+      - action: utter_matricula_3
+      - intent: matricula_4
+      - action: utter_matricula_4
+
+  - story: Requisitos_1
+    steps:
+      - intent: saludo
+      - action: utter_saludo
+      - slot_was_set:
+          - saludo_hecho: true
+      - intent: requisitos_acceso_1
+      - action: utter_requisitos_acceso_1
+      - intent: requisitos_acceso_2
+      - action: utter_requisitos_acceso_2
+
+  - story: Requisitos_2
+    steps:
+      - intent: saludo
+      - action: utter_saludo
+      - slot_was_set:
+          - saludo_hecho: true
+      - intent: requisitos_acceso_1
+      - action: utter_requisitos_acceso_1
+      - intent: requisitos_acceso_2
+      - action: utter_requisitos_acceso_2
+      - intent: despedida
+      - action: utter_despedida
+      - slot_was_set:
+          - despedida_hecha: true
+
+  - story: Requisitos_3
+    steps:
+      - intent: requisitos_acceso_1
+      - action: utter_requisitos_acceso_1
+      - intent: requisitos_acceso_2
+      - action: utter_requisitos_acceso_2
+
+  - story: Requisitos_4
+    steps:
+      - intent: saludo
+      - action: utter_saludo
+      - slot_was_set:
+          - saludo_hecho: true
+      - intent: requisitos_acceso_1
+      - action: utter_requisitos_acceso_1
+      - intent: requisitos_acceso_3
+      - action: utter_requisitos_acceso_3
+
+  - story: Requisitos_5
+    steps:
+      - intent: saludo
+      - action: utter_saludo
+      - slot_was_set:
+          - saludo_hecho: true
+      - intent: requisitos_acceso_1
+      - action: utter_requisitos_acceso_1
+      - intent: requisitos_acceso_3
+      - action: utter_requisitos_acceso_3
+      - intent: despedida
+      - action: utter_despedida
+      - slot_was_set:
+          - despedida_hecha: true
+
+  - story: Requisitos_6
+    steps:
+      - intent: requisitos_acceso_1
+      - action: utter_requisitos_acceso_1
+      - intent: requisitos_acceso_3
+      - action: utter_requisitos_acceso_3
+
+  - story: Requisitos_7
+    steps:
+      - intent: saludo
+      - action: utter_saludo
+      - slot_was_set:
+          - saludo_hecho: true
+      - intent: requisitos_acceso_1
+      - action: utter_requisitos_acceso_1
+      - intent: requisitos_acceso_4
+      - action: utter_requisitos_acceso_4
+
+  - story: Requisitos_8
+    steps:
+      - intent: saludo
+      - action: utter_saludo
+      - slot_was_set:
+          - saludo_hecho: true
+      - intent: requisitos_acceso_1
+      - action: utter_requisitos_acceso_1
+      - intent: requisitos_acceso_4
+      - action: utter_requisitos_acceso_4
+      - intent: despedida
+      - action: utter_despedida
+      - slot_was_set:
+          - despedida_hecha: true
+
+  - story: Requisitos_9
+    steps:
+      - intent: requisitos_acceso_1
+      - action: utter_requisitos_acceso_1
+      - intent: requisitos_acceso_4
+      - action: utter_requisitos_acceso_4
+
+  - story: Requisitos_10
+    steps:
+      - intent: requisitos_acceso_1
+      - action: utter_requisitos_acceso_1
+      - intent: requisitos_acceso_2
+      - action: utter_requisitos_acceso_2
+      - intent: requisitos_acceso_3
+      - action: utter_requisitos_acceso_3
+      - intent: requisitos_acceso_4
+      - action: utter_requisitos_acceso_4

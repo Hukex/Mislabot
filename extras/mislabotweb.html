@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Mislabot</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="icon"
+        href="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.fpmislata.com/wordpress/&size=16"
+        type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <style>
+        .iframe-container {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .iframe-container iframe {
+            width: 100%;
+            height: 100vh;
+            border: none;
+            overflow: hidden;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+
+        .chat-popup {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 9999;
+            width: 400px;
+            height: 600px;
+            background-color: #f7f7f7;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .chat-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            margin: auto;
+            overflow: auto;
+        }
+
+        .chat-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+        }
+
+        .chat-header h4 {
+            margin: 10px 10px 5px;
+            color: #333;
+        }
+
+        .chat-messages {
+            height: calc(100% - 100px);
+            overflow-y: auto;
+            overflow-x: hidden;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ccc;
+            scroll-behavior: smooth;
+        }
+
+        .chat-messages::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .chat-messages::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        .chat-messages::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+
+        .chat-messages::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        .chat-input {
+            display: flex;
+            margin: 5px;
+        }
+
+        .chat-input input[type="text"] {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            outline: none;
+        }
+
+        .chat-input button {
+            padding: 8px 15px;
+            margin-left: 5px;
+            border: none;
+            background-color: #ffaf00;
+            color: #fff;
+            border-radius: 3px;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .btn-close {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 20px;
+            color: #999;
+        }
+
+        .btn-close:hover {
+            color: #333;
+        }
+
+        .btn-open {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #ffaf00;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            line-height: 50px;
+            text-align: center;
+            cursor: pointer;
+            outline: none;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s;
+        }
+
+        .btn-open:hover {
+            background-color: #b37400;
+        }
+
+        .user-message {
+            background-color: #419dff;
+            color: #333;
+            border-radius: 5px;
+            border: 2px solid #419dff;
+            margin-left: auto;
+            margin-right: 20px;
+            width: fit-content;
+            padding: 10px;
+            filter: drop-shadow(2px 4px 6px black);
+            overflow-wrap: anywhere;
+            font-size: 14px;
+            font-family: 'Poppins', sans-serif;
+            transform: translateX(10px);
+        }
+
+        .bot-message {
+            background-color: #ffaf00;
+            color: #333;
+            border-radius: 5px;
+            border: 2px solid #ffaf00;
+            margin-left: 10px;
+            margin-right: 10px;
+            padding: 10px;
+            width: fit-content;
+            filter: drop-shadow(2px 4px 6px black);
+            overflow-wrap: anywhere;
+            font-size: 14px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .bot-message>img {
+            width: 350px;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        ul ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .fa-volume-mute:hover {
+            color: #f03737;
+            animation: normal 1s;
+        }
+
+        .muted {
+            color: #f03737
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="iframe-container">
+        <iframe src="https://www.fpmislata.com/wordpress/" frameborder="0"></iframe>
+    </div>
+
+
+    <button class="btn-open" id="btn-open">&#128172;</button>
+
+    <div class="chat-popup" id="chat-popup">
+        <div class="chat-container">
+            <div class="chat-header">
+                <h4>Mislabot
+                    <i class="fa fa-volume-mute"></i>
+                </h4>
+                <button class="btn-close" id="btn-close">&#10005;</button>
+            </div>
+            <div class="chat-messages" id="chat-messages"></div>
+            <div class="chat-input">
+                <input type="text" id="message-input" placeholder="Escribe un mensaje...">
+                <button class="btn-send" id="btn-send">Enviar</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("btn-open").addEventListener("click", function () {
+            document.getElementById("chat-popup").style.display = "block";
+            if (document.getElementById("chat-messages").children.length <= 0) {
+                document.getElementById("message-input").value = "Hola"
+                sendMessage();
+            }
+        });
+
+        document.getElementById("btn-close").addEventListener("click", function () {
+            document.getElementById("chat-popup").style.display = "none";
+            if (synthesis.speaking) {
+                synthesis.cancel();
+            }
+        });
+
+        document.getElementById("message-input").addEventListener("keypress", function (event) {
+            if (event.key === "Enter") {
+                sendMessage();
+            }
+        });
+
+        document.getElementById("btn-send").addEventListener("click", function () {
+            sendMessage();
+        });
+
+        var iconMuted = document.getElementsByClassName("fa-volume-mute")[0]
+
+        iconMuted.addEventListener("click", function () {
+            iconMuted.classList.toggle("muted")
+            if (synthesis.speaking) {
+                synthesis.cancel();
+            }
+        });
+
+        function sendMessage() {
+            var messageInput = document.getElementById("message-input");
+            var message = messageInput.value.trim();
+
+            if (message !== "") {
+                appendMessage("Usuario", message);
+                messageInput.value = "";
+                scrollToBottom();
+                sendRequestToRasa(message);
+                if (synthesis.speaking) {
+                    synthesis.cancel();
+                }
+
+            }
+        }
+
+        function sendRequestToRasa(message) {
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "http://localhost:5005/webhooks/rest/webhook", true);
+            xhr.setRequestHeader("Content-Type", "application/json");
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    var response = JSON.parse(xhr.responseText);
+                    displayResponse(response);
+                }
+            };
+            var data = JSON.stringify({ "sender": "user", "message": message });
+            xhr.send(data);
+        }
+
+        function displayResponse(response) {
+            var chatMessages = document.getElementById("chat-messages");
+            response.forEach(function (item) {
+                if (isJSON(item.text)) {
+                    var jsonText = JSON.parse(item.text);
+                    var formattedText = formatJSON(jsonText);
+                    appendMessage("Mislabot", formattedText);
+                } else if (item.image !== undefined) {
+                    var imageUrl = item.image;
+                    var imageElement = createImageElement(imageUrl);
+                    appendMessage("Mislabot", imageElement);
+                } else {
+                    appendMessage("Mislabot", item.text);
+                }
+                scrollToBottom();
+            });
+        }
+
+        function isJSON(text) {
+            try {
+                JSON.parse(text);
+                return true;
+            } catch (error) {
+                return false;
+            }
+        }
+
+        function formatJSON(json) {
+            return "<ul>" + formatObject(json) + "</ul>";
+        }
+
+        function formatObject(obj) {
+            var formattedText = "";
+            Object.keys(obj).forEach(function (key) {
+                formattedText += "<li>";
+                if (typeof obj[key] === 'object') {
+                    formattedText += "<ul>" + formatObject(obj[key]) + "</ul>";
+                } else {
+                    formattedText += obj[key];
+                }
+                formattedText += "</li>";
+            });
+            return formattedText;
+        }
+
+        function createImageElement(imageUrl) {
+            return "<img src='" + imageUrl + "' />";
+        }
+
+        function appendMessage(sender, text) {
+            var chatMessages = document.getElementById("chat-messages");
+            var messageElement = document.createElement("p");
+
+            messageElement.innerHTML = text;
+            if (sender == "Mislabot")
+                leerTexto(text)
+
+            messageElement.classList.add(sender === "Usuario" ? "user-message" : "bot-message");
+            chatMessages.appendChild(messageElement);
+        }
+
+        function scrollToBottom() {
+            var chatMessages = document.getElementById("chat-messages");
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        var synthesis = window.speechSynthesis;
+
+        function leerTexto(text) {
+            if (!iconMuted.classList.contains("muted")) {
+                var utterance = new SpeechSynthesisUtterance(text.replace(/[\u{1F000}-\u{1FFFF}\u274C\u231A]/gu, '')); // Elimina iconos unicode
+                utterance.lang = "es-ES";
+                utterance.rate = 1.25;
+                synthesis.speak(utterance);
+            }
+        }
+
+        window.addEventListener("beforeunload", function (event) {
+            if (synthesis.speaking) {
+                synthesis.cancel();
+            }
+        });
+    </script>
+
+</body>
+
+</html>
